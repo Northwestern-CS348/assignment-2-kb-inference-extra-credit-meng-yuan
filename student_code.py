@@ -143,6 +143,7 @@ class KnowledgeBase(object):
         ####################################################
         # Student code goes here    Fact is not in the KB
         s = ''
+
         if isinstance(fact_or_rule,Rule):
 
             if fact_or_rule not in self.rules:
@@ -156,8 +157,7 @@ class KnowledgeBase(object):
                         s += self.explain2(rule, 1, num+2)
                         #self.explain2(x[0], 0, num)
 
-
-        elif isinstance(fact_or_rule,Fact):
+        if isinstance(fact_or_rule,Fact):
             #fact = self._get_fact(fact_or_rule)
             if fact_or_rule not in self.facts:
                 return "Fact is not in the KB"
@@ -173,6 +173,9 @@ class KnowledgeBase(object):
                         s += self.explain2(fact, 0, num+2)
 
                         #self.explain2(x[1], 1, num)
+
+        else:
+            return(False)
 
         print(s)
         return s
