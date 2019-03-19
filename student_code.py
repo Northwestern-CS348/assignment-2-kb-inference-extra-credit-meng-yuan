@@ -143,7 +143,6 @@ class KnowledgeBase(object):
         ####################################################
         # Student code goes here    Fact is not in the KB
         s = ''
-
         if isinstance(fact_or_rule,Rule):
 
             if fact_or_rule not in self.rules:
@@ -171,7 +170,6 @@ class KnowledgeBase(object):
                     #for x in fact.supported_by:
                         num = 0
                         s += self.explain2(fact, 0, num+2)
-
                         #self.explain2(x[1], 1, num)
 
         else:
@@ -198,7 +196,7 @@ class KnowledgeBase(object):
                     b = ''
                 s = num*space
                 #print("%sSUPPORTED BY" % s)
-                string = string+'\n' + s + "SUPPORTED BY" +"\n"+s+"  "+"fact: "+str(x[0].statement)+ " "+a
+                string = string +'\n'+ s + "SUPPORTED BY" +"\n"+s+"  "+"fact: "+str(x[0].statement)+" "+a
                 #print("  %sfact: %s %s" % (s,x[0].statement, a))
                 if x[0].supported_by != []:
                     string += self.explain2(x[0], 0, num+4)
